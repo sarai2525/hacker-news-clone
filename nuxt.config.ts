@@ -10,6 +10,7 @@ export default defineNuxtConfig({
     },
   },
   telemetry: false,
-  serverHandlers: [{ route: '/api/**', handler: '~/server/index.ts' }],
+  serverHandlers: [{ route: '/api/**', handler: '~/src/server/index.ts' }],
   modules: ['@nuxtjs/eslint-module'],
+  srcDir: 'src',
 })
