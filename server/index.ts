@@ -14,10 +14,11 @@ router.get('/error', (_req, _res, next) => {
   next(new Error('hoge'))
 })
 
-router.get('/hello', (_req, res, _next) => {
+router.get('/hello', (_req, res) => {
   res.json({ message: 'hello world' })
 })
 
 app.use('/api', router)
 
+// eslint-disable-next-line no-undef
 export default fromNodeMiddleware(app)
