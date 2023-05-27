@@ -10,11 +10,11 @@ app.use((_req, _res, next) => {
   next();
 });
 
-router.get("/error", (_req, res, next) => {
+router.get("/error", (_req, _res, next) => {
   next(new Error("hoge"));
 });
 
-router.get("/hello", (_req, res, _next) => {
+router.get("/hello", (_req, _res, _next) => {
   res.json({ message: "hello world" });
 });
 
