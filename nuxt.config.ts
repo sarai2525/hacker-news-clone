@@ -1,5 +1,5 @@
 import { defineNuxtConfig } from 'nuxt/config'
-import pkg from 'package.json'
+import pkg from './package.json'
 
 export default defineNuxtConfig({
   app: {
@@ -10,7 +10,7 @@ export default defineNuxtConfig({
     },
   },
   telemetry: false,
-  serverHandlers: [{ route: '/api/**', handler: '~/src/server/index.ts' }],
+  serverHandlers: [{ route: '/api/**', handler: '~/server/index.ts' }],
   modules: ['@nuxtjs/eslint-module'],
   srcDir: 'src',
 })
