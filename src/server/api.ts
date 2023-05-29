@@ -1,5 +1,5 @@
 import express, { Router } from 'express'
-import { testService } from './service/test.js'
+import { testService } from './service/test'
 
 const app = express()
 const router = Router()
