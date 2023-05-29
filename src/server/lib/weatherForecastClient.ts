@@ -1,3 +1,5 @@
+// API https://open-meteo.com/en/docs#latitude=35.69&longitude=139.69&hourly=temperature_2m
+
 import { ofetch, $Fetch } from 'ofetch'
 const BASE_URL = 'https://api.open-meteo.com/v1'
 
