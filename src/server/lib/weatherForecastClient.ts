@@ -17,7 +17,7 @@ class WeatherForecastClient {
       },
     })
   }
-  public async getTokyoForecast() {
+  public async getTokyoWeatherForecast() {
     const query = {
       latitude: 35.6785,
       longitude: 139.6823,

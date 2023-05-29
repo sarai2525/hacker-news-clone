@@ -1,14 +1,14 @@
 import express, { Router } from 'express'
-import { testService } from './service/test'
+import { tokyoWeatherForecastService } from './service/fetchTokyoWeatherForecast'
 
 const app = express()
 const router = Router()
 app.use(express.json())
 
 // Move to server/express-app/routes/test.ts, anywhere really, but avoid server/api and server/middleware
-router.get('/test', async (req, res, next) => {
+router.get('/tokyo-weather-forecast', async (req, res, next) => {
   try {
-    const result = await testService()
+    const result = await tokyoWeatherForecastService()
     res.status(200).json(result)
   } catch (err) {
     next(err)
@@ -20,7 +20,7 @@ router.get('/test', async (req, res, next) => {
 app.use('/api/', router)
 
 // Catch-all
-app.use((req, res) => res.status(200).json({ route: '/*' }))
+app.use((_req, res) => res.status(200).json({ route: '/*' }))
 
 // eslint-disable-next-line no-undef
 export default fromNodeMiddleware(app)
