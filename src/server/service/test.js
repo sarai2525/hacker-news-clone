@@ -1,3 +1,6 @@
-export function testService() {
-  return { data: '/api/test' }
+import weatherForecastClient from '../lib/weatherForecastClient'
+
+export async function testService() {
+  const { data } = await weatherForecastClient.getTokyoForecast
+  return data
 }
