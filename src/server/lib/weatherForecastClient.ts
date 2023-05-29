@@ -1,12 +1,5 @@
 import { ofetch, $Fetch } from 'ofetch'
-
 const BASE_URL = 'https://api.open-meteo.com/v1'
-const QUERY = {
-  latitude: 35.6785,
-  longitude: 139.6823,
-  hourly: 'temperature_2m',
-  timezone: 'Asia/Tokyo',
-}
 
 class WeatherForecastClient {
   private client: $Fetch
@@ -15,15 +8,22 @@ class WeatherForecastClient {
     this.client = ofetch.create({
       baseURL: BASE_URL,
       async onRequest({ request, options }) {
-        console.log('[fetch request]', request, options)
+        const { baseURL } = options
+        console.log('[fetch request]', `${baseURL}${request}`)
         options.query = options.query || {}
         options.query.t = new Date()
       },
     })
   }
   public async getTokyoForecast() {
+    const query = {
+      latitude: 35.6785,
+      longitude: 139.6823,
+      hourly: 'temperature_2m',
+      timezone: 'Asia/Tokyo',
+    }
     const result = await this.client('/forecast', {
-      query: QUERY,
+      query,
     })
     return result
   }
