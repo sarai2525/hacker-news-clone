@@ -15,8 +15,15 @@
     "*.{.js,ts,vue}": "pnpm lint:script",
     "*.{md,json,yml,yaml}": "pnpm lint:prettier"
   },
+  "pnpm": {
+    "peerDependencyRules": {
+      "ignoreMissing": [
+        "vite",
+        "webpack"
+      ]
+    }
+  },
   "devDependencies": {
-    "@nuxt/devtools": "^0.5.5",
     "@nuxtjs/eslint-config-typescript": "^12.0.0",
     "@nuxtjs/eslint-module": "^4.1.0",
     "@types/express": "^4.17.17",
