@@ -60,6 +60,18 @@ class WeatherForecastClient {
     const result = await this.client.get('forecast', { searchParams: query }).json()
     return result
   }
+  public async getFranceWeatherForecast() {
+    const query: RequestQuery = {
+      latitude: 46.0,
+      longitude: 2.0,
+      daily: 'weathercode,temperature_2m_max,temperature_2m_min,rain_sum',
+      timezone: 'Europe/Paris',
+    }
+    const result = await this.client('/forecast', {
+      query,
+    })
+    return result
+  }
 }
 
 export default new WeatherForecastClient()
