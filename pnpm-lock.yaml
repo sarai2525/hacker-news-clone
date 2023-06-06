@@ -6,6 +6,9 @@ dependencies:
     version: 0.33.3
 
 devDependencies:
+  '@element-plus/icons-vue':
+    specifier: ^2.1.0
+    version: 2.1.0(vue@3.3.4)
   '@element-plus/nuxt':
     specifier: ^1.0.5
     version: 1.0.5(@element-plus/icons-vue@2.1.0)(element-plus@2.3.5)
@@ -63,6 +66,9 @@ devDependencies:
   typescript:
     specifier: ^5.0.4
     version: 5.0.4
+  vue:
+    specifier: ^3.3.4
+    version: 3.3.4
 
 packages:
   /@ampproject/remapping@2.2.1:
